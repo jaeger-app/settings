@@ -1,16 +1,16 @@
 <?php
 /**
- * mithra62
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/Settings.php
+ * @filesource 	./Settings.php
  */
-namespace mithra62;
+namespace JaegerApp;
 
 /**
- * mithra62 - Settings Object
+ * Jaeger - Settings Object
  *
  * Abstract object to manage system settings
  *
@@ -35,7 +35,7 @@ abstract class Settings
     protected $table = '';
 
     /**
-     * Global mithra62 product settings
+     * Global JaegerApp product settings
      * 
      * @var array
      */
@@ -98,31 +98,31 @@ abstract class Settings
     /**
      * The encryption object to use for storage
      * 
-     * @var \mithra62\Encrypt
+     * @var \JaegerApp\Encrypt
      */
     protected $encrypt = null;
 
     /**
      * The lanaguage instance
      * 
-     * @var \mithra62\Language
+     * @var \JaegerApp\Language
      */
     protected $lang = null;
 
     /**
      * The database instance
      * 
-     * @var \mithra62\Db
+     * @var \JaegerApp\Db
      */
     protected $db = null;
 
     /**
      * Sets it up
      * 
-     * @param \mithra62\Db $db            
-     * @param \mithra62\Language $lang            
+     * @param \JaegerApp\Db $db            
+     * @param \JaegerApp\Language $lang            
      */
-    public function __construct(\mithra62\Db $db, \mithra62\Language $lang)
+    public function __construct(\JaegerApp\Db $db, \JaegerApp\Language $lang) 
     {
         $this->db = $db;
         $this->lang = $lang;
@@ -131,11 +131,8 @@ abstract class Settings
     /**
      * Will validate the passed setting data for errors
      * 
-     * @param array $data
-     *            The data to valiate
-     * @param array $extra
-     *            Any extra data to provide context for the $data
-     * @param \mithra62\Validate $validate            
+     * @param array $data The data to valiate
+     * @param array $extra Any extra data to provide context for the $data        
      */
     public abstract function validate(array $data, array $extra = array());
 
@@ -143,7 +140,7 @@ abstract class Settings
      * Sets the default settings values
      * 
      * @param array $defaults            
-     * @return \mithra62\Settings
+     * @return \JaegerApp\Settings
      */
     public function setDefaults(array $defaults)
     {
@@ -154,7 +151,7 @@ abstract class Settings
     /**
      * Returns the default settings
      * 
-     * @return \mithra62\array
+     * @return array
      */
     public function getDefaults()
     {
@@ -165,7 +162,7 @@ abstract class Settings
      * Sets the table we're using
      * 
      * @param string $table            
-     * @return \mithra62\Settings
+     * @return \JaegerApp\Settings
      */
     public function setTable($table)
     {
@@ -176,7 +173,7 @@ abstract class Settings
     /**
      * Returns the Settings table name
      * 
-     * @return \mithra62\string
+     * @return string
      */
     public function getTable()
     {
@@ -186,7 +183,7 @@ abstract class Settings
     /**
      * Returns the settings that have custom options
      * 
-     * @return \mithra62\array
+     * @return array
      */
     public function getCustomOptions()
     {
@@ -196,7 +193,7 @@ abstract class Settings
     /**
      * Returns the available overrides
      * 
-     * @return \mithra62\array
+     * @return array
      */
     public function getOverrides()
     {
@@ -207,7 +204,7 @@ abstract class Settings
      * Sets the overrides to use
      * 
      * @param array $overrides            
-     * @return \mithra62\Settings
+     * @return \JaegerApp\Settings
      */
     public function setOverrides(array $overrides = array())
     {
@@ -218,7 +215,7 @@ abstract class Settings
     /**
      * Retrns the encryption object
      * 
-     * @return \mithra62\Encrypt
+     * @return \JaegerApp\Encrypt
      */
     public function getEncrypt()
     {
@@ -228,10 +225,10 @@ abstract class Settings
     /**
      * Sets the encryption object we're using
      * 
-     * @param \mithra62\Encrypt $encrypt            
-     * @return \mithra62\Settings
+     * @param \JaegerApp\Encrypt $encrypt            
+     * @return \JaegerApp\Settings
      */
-    public function setEncrypt(\mithra62\Encrypt $encrypt)
+    public function setEncrypt(\JaegerApp\Encrypt $encrypt)
     {
         $this->encrypt = $encrypt;
         return $this;
@@ -241,7 +238,7 @@ abstract class Settings
      * Sets the encrypted setting keys
      * 
      * @param array $encrypted            
-     * @return \mithra62\Settings
+     * @return \JaegerApp\Settings
      */
     public function setEncrypted(array $encrypted = array())
     {
@@ -252,7 +249,7 @@ abstract class Settings
     /**
      * Returns the settings keys to be encrypted
      * 
-     * @return \mithra62\array
+     * @return \JaegerApp\array
      */
     public function getEncrypted()
     {
@@ -273,7 +270,7 @@ abstract class Settings
      * Sets the serialized setting options
      * 
      * @param array $serialized            
-     * @return \mithra62\Settings
+     * @return \JaegerApp\Settings
      */
     public function setSerialized(array $serialized = array())
     {
@@ -379,7 +376,7 @@ abstract class Settings
     /**
      * Returns the system settings
      * 
-     * @return \mithra62\array
+     * @return array
      */
     public function get($force = false)
     {
