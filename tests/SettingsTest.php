@@ -51,6 +51,13 @@ class _settings extends Settings
  */
 class SettingsTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * The name of the test database table
+     *
+     * @var string
+     */
+    protected $test_table_name = 'm62_test_table';
+    
 
     /**
      * Tests the initial attributes and property values
@@ -194,5 +201,15 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
         $settings->updateSetting('relative_time', '0');
         $data = $settings->get(true);
         $this->assertEquals(0, $data['relative_time']);
-    }
+    } 
+    
+    /**
+     * The Databaes Test Credentiasl
+     *
+     * @return array
+     */
+    protected function getDbCreds()
+    {
+        return include 'data/db.config.php';
+    }   
 }
