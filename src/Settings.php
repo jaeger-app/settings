@@ -134,7 +134,7 @@ abstract class Settings
      * @param array $data The data to valiate
      * @param array $extra Any extra data to provide context for the $data        
      */
-    public abstract function validate(array $data, array $extra = array());
+    abstract public function validate(array $data, array $extra = array());
 
     /**
      * Sets the default settings values
