@@ -189,7 +189,8 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testUpdateSetting()
     {
         $db = new Db();
-        $db->setCredentials($this->getDbCreds())
+		$creds = $this->getDbCreds();
+        $db->setCredentials($creds)
             ->emptyTable($this->test_table_name);
         $settings = new _settings($db, new Language());
         
@@ -210,11 +211,11 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
      */
     protected function getDbCreds()
     {
-		if(file_exists('data/db.config.php')) {
+		if(file_exists(__DIR__.'/data/db.config.php')) {
 			return include 'data/db.config.php';
 		}
 
-		if(file_exists('data/db.travis.config.php')) {
+		if(file_exists(__DIR__.'/data/db.travis.config.php')) {
 			return include 'data/db.travis.config.php';
 		}
     }   
