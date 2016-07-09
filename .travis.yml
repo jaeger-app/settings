@@ -12,7 +12,8 @@ services:
   
 before_script:
   - mysql -e 'create database jaeger_settings;'
+  - mysql -u root jaeger_settings < data/settings_table.sql
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
  
 script: phpunit
