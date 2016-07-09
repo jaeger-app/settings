@@ -23,7 +23,7 @@ Once that's done, you'll have to install the database schema located at data\set
 
 In your parent object, ensure you extend have 2 properties, `$table` and `$_defaults`. `$table` should be the name of your settings table, and `$_defaults` is a key => value array of your plugin's settings and a default value for each. 
 
-You'll also have to define a method named `validate(array $data, array $extra = array())` that accepts the settings data and returns a boolean.
+You'll also have to define a method named `validate(array $data, array $extra = array())` that accepts the settings data and returns an array of errors on failure.
 
 ```php
 class MyPluginSettings extends \JaegerApp\Settings
@@ -56,4 +56,16 @@ class MyPluginSettings extends \JaegerApp\Settings
     {}
 }
 ```
+
+## Advanced Usage
+
+`JaegerApp\Settings` includes the following capabilities:
+
+1. Configuration Overrides
+2. Encrypting data on storage
+3. Convert new line strings into arrays
+4. Allow for custom values 
+5. Serialize arrays on storage
+
+
 
