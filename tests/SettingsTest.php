@@ -215,8 +215,12 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
 			return include 'data/db.config.php';
 		}
 
-		if(file_exists(__DIR__.'/data/db.travis.config.php')) {
-			return include 'data/db.travis.config.php';
-		}
+		return array(
+			'host' => 'localhost',
+			'user' => 'travis',
+			'password' => '',
+			'database' => 'jaeger_settings', // default database
+			'database_switch' => 'jaeger_settings_switch'
+		);
     }   
 }
