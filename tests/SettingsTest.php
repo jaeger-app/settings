@@ -210,6 +210,12 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
      */
     protected function getDbCreds()
     {
-        return include 'data/db.config.php';
+		if(file_exists('data/db.config.php') {
+			return include 'data/db.config.php';
+		}
+
+		if(file_exists('data/db.travis.config.php') {
+			return include 'data/db.travis.config.php';
+		}
     }   
 }
