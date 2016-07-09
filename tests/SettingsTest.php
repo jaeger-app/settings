@@ -56,7 +56,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
      *
      * @var string
      */
-    protected $test_table_name = 'm62_test_table';
+    protected $test_table_name = 'jaeger_settings';
     
 
     /**
