@@ -19,7 +19,6 @@ namespace JaegerApp;
  */
 abstract class Settings
 {
-
     /**
      * The Settings array
      * 
